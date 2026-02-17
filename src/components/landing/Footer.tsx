@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const GITHUB_URL = "https://github.com/llmtrace/llmtrace";
+const GITHUB_URL = "https://github.com/epappas/llmtrace";
 
 const Footer = () => {
   return (

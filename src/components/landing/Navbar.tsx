@@ -1,6 +1,6 @@
 import { Shield, Github } from "lucide-react";
 
-const GITHUB_URL = "https://github.com/llmtrace/llmtrace";
+const GITHUB_URL = "https://github.com/epappas/llmtrace";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
