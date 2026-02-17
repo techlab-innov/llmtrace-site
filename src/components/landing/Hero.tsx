@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const GITHUB_URL = "https://github.com/llmtrace/llmtrace";
+import { GITHUB_URL } from "@/constants/urls";
 
 const codeSnippet = `from openai import OpenAI
 
