@@ -81,7 +81,7 @@ The site will automatically deploy when you push to the `main` branch. The GitHu
 2. Build the project
 3. Deploy to GitHub Pages
 
-Your site will be available at: `https://epappas.github.io/llmtrace-1d6ae1cd/`
+Your site will be available at: `https://llmtrace.io/`
 
 **Manual Deployment:**
 You can also trigger a deployment manually:
