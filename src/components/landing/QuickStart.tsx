@@ -68,7 +68,7 @@ const QuickStart = () => {
             </span>
           </div>
           <div className="flex items-center gap-3 p-4">
-            <div className="flex-1 overflow-x-auto font-mono text-sm md:text-base text-foreground/90 bg-background/50 rounded-lg px-4 py-3 border border-border/30">
+            <div className="flex-1 min-w-0 font-mono text-sm md:text-base text-foreground/90 bg-background/50 rounded-lg px-4 py-3 border border-border/30 break-words">
               <span className="text-primary mr-2">$</span>
               {INSTALL_COMMAND}
             </div>
