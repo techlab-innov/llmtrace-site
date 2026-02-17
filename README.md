@@ -60,9 +60,38 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Project Structure
+
+The project uses Vite as the build tool and is configured for deployment to GitHub Pages with automatic base path handling.
+
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Deploy to GitHub Pages
+
+This project is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
+
+**Prerequisites:**
+1. Enable GitHub Pages in your repository settings:
+   - Go to Settings → Pages
+   - Under "Build and deployment", select "GitHub Actions" as the source
+
+**Automatic Deployment:**
+The site will automatically deploy when you push to the `main` branch. The GitHub Actions workflow will:
+1. Install dependencies
+2. Build the project
+3. Deploy to GitHub Pages
+
+Your site will be available at: `https://epappas.github.io/llmtrace-1d6ae1cd/`
+
+**Manual Deployment:**
+You can also trigger a deployment manually:
+1. Go to the "Actions" tab in your repository
+2. Select "Deploy to GitHub Pages"
+3. Click "Run workflow"
+
+### Deploy with Lovable
+
+Alternatively, you can open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share → Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
