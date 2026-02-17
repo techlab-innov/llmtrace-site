@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Check, Copy, Terminal } from "lucide-react";
+import { INSTALL_COMMAND } from "@/constants/urls";
 
 const installMethods = {
   cargo: [
@@ -21,6 +23,17 @@ const installMethods = {
 
 const QuickStart = () => {
   const [selectedMethod, setSelectedMethod] = useState<"cargo" | "docker" | "python">("cargo");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(INSTALL_COMMAND);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback: select the text so the user can copy manually
+    }
+  };
 
   return (
     <section id="quickstart" className="py-24 lg:py-32">
@@ -36,9 +49,51 @@ const QuickStart = () => {
             Up and Running in <span className="text-gradient">30 Seconds</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Choose your installation method.
+            Install with a single command.
           </p>
         </motion.div>
+
+        {/* One-liner install */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="rounded-xl border border-primary/30 bg-card glow-border overflow-hidden mb-10"
+        >
+          <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50">
+            <Terminal className="h-4 w-4 text-primary" />
+            <span className="font-mono text-xs text-primary tracking-wider uppercase">
+              Quick Install
+            </span>
+          </div>
+          <div className="flex items-center gap-3 p-4">
+            <div className="flex-1 overflow-x-auto font-mono text-sm md:text-base text-foreground/90 bg-background/50 rounded-lg px-4 py-3 border border-border/30">
+              <span className="text-primary mr-2">$</span>
+              {INSTALL_COMMAND}
+            </div>
+            <button
+              onClick={handleCopy}
+              className="flex-shrink-0 p-2.5 rounded-lg border border-border/50 bg-background/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+              aria-label={copied ? "Copied!" : "Copy install command"}
+            >
+              {copied ? (
+                <Check className="h-4 w-4 text-green-400" />
+              ) : (
+                <Copy className="h-4 w-4" />
+              )}
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Separator */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="flex-1 h-px bg-border/50" />
+          <span className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
+            or choose a method
+          </span>
+          <div className="flex-1 h-px bg-border/50" />
+        </div>
 
         {/* Installation method tabs */}
         <motion.div
