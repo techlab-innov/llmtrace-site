@@ -1,5 +1,5 @@
-import { Shield, Github } from "lucide-react";
-import { GITHUB_URL } from "@/constants/urls";
+import { Shield, Github, Twitter } from "lucide-react";
+import { GITHUB_URL, TWITTER_URL } from "@/constants/urls";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -28,15 +28,26 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a
-          href={GITHUB_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Github className="h-4 w-4" />
-          <span className="hidden sm:inline">GitHub</span>
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href={TWITTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Twitter className="h-4 w-4" />
+            <span className="hidden sm:inline">Twitter</span>
+          </a>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github className="h-4 w-4" />
+            <span className="hidden sm:inline">GitHub</span>
+          </a>
+        </div>
       </div>
     </nav>
   );

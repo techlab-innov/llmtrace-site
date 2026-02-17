@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Github, Shield } from "lucide-react";
+import { Github, Shield, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { GITHUB_URL } from "@/constants/urls";
+import { GITHUB_URL, TWITTER_URL } from "@/constants/urls";
 
 const Footer = () => {
   return (
@@ -40,6 +40,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
+            <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Twitter</a>
             <a href={`${GITHUB_URL}#readme`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Docs</a>
             <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">License</a>
           </div>
