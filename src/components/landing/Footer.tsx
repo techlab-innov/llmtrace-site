@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Shield, Twitter, MessageCircle } from "lucide-react";
+import { Github, Shield, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GITHUB_URL, TWITTER_URL, DISCORD_URL } from "@/constants/urls";
 

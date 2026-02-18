@@ -1,4 +1,5 @@
-import { Shield, Github, Twitter, MessageCircle } from "lucide-react";
+import { Shield, Github, Twitter } from "lucide-react";
+import DiscordIcon from "@/components/icons/DiscordIcon";
 import { GITHUB_URL, TWITTER_URL, DISCORD_URL } from "@/constants/urls";
 
 const navLinks = [
@@ -35,7 +36,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <MessageCircle className="h-4 w-4" />
+            <DiscordIcon className="h-4 w-4" />
             <span className="hidden sm:inline">Discord</span>
           </a>
           <a
