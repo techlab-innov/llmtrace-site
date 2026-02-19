@@ -1,5 +1,6 @@
 import { Shield, Github, Twitter } from "lucide-react";
-import { GITHUB_URL, TWITTER_URL } from "@/constants/urls";
+import DiscordIcon from "@/components/icons/DiscordIcon";
+import { GITHUB_URL, TWITTER_URL, DISCORD_URL } from "@/constants/urls";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -29,6 +30,15 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <DiscordIcon className="h-4 w-4" />
+            <span className="hidden sm:inline">Discord</span>
+          </a>
           <a
             href={TWITTER_URL}
             target="_blank"
