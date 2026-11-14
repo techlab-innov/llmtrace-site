@@ -19,7 +19,7 @@ const Footer = () => {
               Ready to <span className="text-gradient">Protect Your AI Agent</span>?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-              Open-source. Self-hosted. Zero vendor lock-in. Start securing your LLM traffic today.
+              Self-hosted and managed deployment options for production AI traffic. Current engine images use Elastic License 2.0; public integration components are MIT-licensed.
             </p>
             <Button size="lg" className="text-base px-10 h-12 glow-cyan" asChild>
               <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
@@ -30,6 +30,12 @@ const Footer = () => {
           </motion.div>
         </div>
       </section>
+
+      <div className="container mx-auto px-6 pb-8 text-center text-sm text-muted-foreground">
+        <p><a href="https://setloop.io/llmtrace" className="underline underline-offset-4 hover:text-foreground">LLMTrace by Setloop</a></p>
+        <p className="mt-3">Setloop is a trading brand of Techlab Innovative Ltd.</p>
+        <p className="mt-2">Registered in Scotland (Company No. <a href="https://find-and-update.company-information.service.gov.uk/company/SC785625" className="underline underline-offset-4 hover:text-foreground">SC785625</a>).</p>
+      </div>
 
       {/* Bottom bar */}
       <div className="border-t border-border/30 py-8">
@@ -43,7 +49,7 @@ const Footer = () => {
             <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Discord</a>
             <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Twitter</a>
             <a href={`${GITHUB_URL}#readme`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Docs</a>
-            <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">License</a>
+            <a href={`${GITHUB_URL}#license`} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">License</a>
           </div>
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} LLMTrace. All rights reserved.</p>
         </div>

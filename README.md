@@ -100,3 +100,12 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+
+## Marketing identity and canonical URL
+
+The canonical LLMTrace marketing page is `https://setloop.io/llmtrace`. Keep the HTML canonical and Open Graph URL aligned with it. The legal identity in the footer is Setloop, a trading brand of Techlab Innovative Ltd, registered in Scotland under company number SC785625. Current engine images use Elastic License 2.0; public integration components use MIT.
+
+The existing GitHub Actions workflow publishes `dist/` to GitHub Pages. The repository also includes `vercel.json` selecting its Vite framework and `dist/` output explicitly. Its security headers preserve the live marketing host's policies, with the Google Fonts stylesheet/font hosts required by this frontend.
+
+At verification on 14 November 2026, `llmtrace.io` redirected through Vercel to `llmtrace.setloop.io`, which served an older Next.js page. Confirm the Vercel project is connected to this repository, uses its root directory, and deploys the current main branch before treating a GitHub Pages deployment as proof that those custom domains are updated. Dashboard and login applications are separate from this marketing canonical.
