@@ -81,7 +81,7 @@ The site will automatically deploy when you push to the `main` branch. The GitHu
 2. Build the project
 3. Deploy to GitHub Pages
 
-Your site will be available at: `https://llmtrace.io/`
+This workflow publishes the Vite build to GitHub Pages. The public marketing domains use the separate routing described below.
 
 **Manual Deployment:**
 You can also trigger a deployment manually:
@@ -108,4 +108,6 @@ The canonical LLMTrace marketing page is `https://setloop.io/llmtrace`. Keep the
 
 The existing GitHub Actions workflow publishes `dist/` to GitHub Pages. A successful workflow verifies the Pages deployment, but custom-domain routing must also be checked before treating it as proof that the public domains serve the current release.
 
-Both `llmtrace.io` and `setloop.io` use Cloudflare authoritative DNS. Inspect the Cloudflare zone records, Pages custom domains and Worker routes to establish the intended marketing deployment. Public DNS has pointed `llmtrace.setloop.io` at `cname.vercel-dns.com`, but that record alone does not establish the intended hosting configuration or a project connected to this repository. Dashboard and login applications are separate from this marketing canonical.
+The homepages at `llmtrace.io`, `www.llmtrace.io` and `llmtrace.setloop.io` now return 301 redirects to `https://setloop.io/llmtrace`, retaining query strings. Their proxied Cloudflare CNAME records point to `setloop.io`; NGINX on ops serves the redirects with a valid HTTPS certificate and tested automatic renewal. The configuration is maintained in [the main site repository](https://github.com/techlab-innov/setloop-site/tree/main/ops/nginx).
+
+Non-homepage URLs retain the existing legacy Next.js upstream, which differs from this Vite application. This includes legal documents such as `/legal/dpa` and legacy assets. Portal and documentation hostnames have separate DNS records and are outside the homepage redirects. A GitHub Pages workflow success is not a deployment of the main site's canonical product page or these NGINX rules.
